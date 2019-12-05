@@ -53,7 +53,7 @@ If you are trying to scope everything to a specific shard, use Octopus.using ins
 
         current_shard_is_accessible = begin
           coder['attributes']['current_shard']
-          true
+          coder['attributes'].respond_to? :attributes
         rescue NoMethodError => e
           false
         end
